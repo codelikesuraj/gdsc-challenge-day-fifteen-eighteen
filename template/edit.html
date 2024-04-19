@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore</title>
+  </head>
+  <body>
+    <h1>Bookstore</h1>
+    <h2><a href="/">Books</a> > Edit > {{ .book.Title }}</h2>
+    <form method="POST" action="/update">
+      <input type="hidden" name="id" value="{{.book.ID}}" />
+      <table>
+        <tr>
+          <td><strong>Title:</strong></td>
+          <td style="padding: 5px">
+            <input
+              required
+              min="2"
+              max="32"
+              type="text"
+              name="title"
+              placeholder="title of the book"
+              value="{{.book.Title}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Author:</strong></td>
+          <td style="padding: 5px">
+            <input
+              required
+              min="2"
+              max="32"
+              type="text"
+              name="author"
+              placeholder="author of the book"
+              value="{{.book.Author}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="padding: 5px"><button type="submit">Update</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
